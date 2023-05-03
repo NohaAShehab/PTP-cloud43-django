@@ -1,0 +1,31 @@
+
+
+# connect application to the database
+
+
+#1- define connection credits
+
+dbname, user ,password , port , host
+
+
+#2- install required connector , lib
+
+
+#3- instruct the application to create table
+# insert , update , delete
+
+model --> python class
+define the table structure --> DDL
+
+
+--> migrate python code ---> to sql
+python manage.py makemigrations # scan changes in models files
+# and generate migration files represent these changes
+
+python manage.py migrate
+
+
+########## connect to mysql
+
+GRANT ALL PRIVILEGES ON *.* TO 'cloud43'@'localhost';
+
