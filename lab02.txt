@@ -1,0 +1,9 @@
+
+
+implement all the crud operations related to the employee
+
+create an application represent the Departements
+
+the emoloyee should be added to one department
+
+display the employees in the same department.
