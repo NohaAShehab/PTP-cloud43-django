@@ -52,12 +52,73 @@ DATABASES = {
 --> models --> python module ---> class
 
 
+################## use admin panel #############################
+to create user --> to use it to login to the admin dashboard
+
+python manage.py createsuperuser
+
+############### add student model to the admin site
+admin.site.register(Student)
+
+### use model functions to apply queries
+## get all objects from the database
+
+Student.objects.all() ---> select * from students;
+
+select student -id =1 ---> Student.object.get(id=1) ## get must return
+with object
+
+get students id > 1
+Student.objects.filter(id__gt=1)
+##### update
+std = Students.objects.get(id=1)
+std.name ='updated'
+std.save()
+### delete
+std.delete()
+### create
+Student.objects.create(name='ahmed',email='ahmed@gmail.com', grade=10)
+
+
+## to test these functions
+    python manage.py shell
+    pip install ipython
+
+
+### add image to the student
+
+    ---> develepment state
+        --> upload image to media folder
+        1- create folder media --> media files .. files, images
+        2- add media path to the settings.py
+            import os
+            MEDIA_URL= '/media/'
+
+            MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+        3- pip install
+         pip install Pillow
+
+        4- add this to the model
+            image = models.ImageField(upload_to='students/', null=True, blank=True)
+
+        5- add media url to urls.py of the project
+        from django.conf import settings
+        from django.conf.urls.static import  static
+
+         + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 
 
 
 
+####### create , update ---> student
 
+## use django model forms ---> form ---> based on the model
 
+--> display html form ---> that I will use to send
+request method --> GET
 
+---> save data to the form
+--> request method POST
 

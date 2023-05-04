@@ -17,17 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # from students.views import helloworld
-from django.conf import settings
-from django.conf.urls.static import  static
-
-from contactus.views import  contactus
+from departments.views import  departments_index, show_dept, delete_dept
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('hello',students.views.helloworld
-    #      , name='helloworld'),
-    # path('contact',contactus, name='contact')
-    path('contact/', include('contactus.urls')),
-    path('students/',include('students.urls')),
-    path('departments/', include('departments.urls'))
+    path('', departments_index, name='departments.index'),
+    path('<int:dept_id>',show_dept, name='departments.show'),
+path('<int:dept_id>/delete',delete_dept, name='departments.delete'),
 
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+]

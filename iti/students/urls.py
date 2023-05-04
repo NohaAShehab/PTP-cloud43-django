@@ -18,7 +18,8 @@ from django.urls import path, include
 # from students.views import helloworld
 import  students.views
 from students.views import  allstudents, getstudent, \
-    landingpage, studnets_list
+    landingpage, studnets_list, students_index, student_delete, \
+    student_show, create_student, edit_student
 urlpatterns = [
 
     path('hello',students.views.helloworld
@@ -30,5 +31,10 @@ urlpatterns = [
          , name='getstudent'),
 
     path('land',landingpage, name='landing'),
-    path('list',studnets_list, name='students_list' )
+    path('list',studnets_list, name='students_list' ),
+    path('index', students_index, name='students.index'),
+    path('index/<int:id>/delete', student_delete, name='students.delete'),
+    path('index/<int:id>', student_show, name='students.show'),
+    path('create', create_student, name='students.create'),
+    path('index/<int:id>/edit', edit_student, name='students.edit'),
 ]
