@@ -29,3 +29,35 @@ python manage.py migrate
 
 GRANT ALL PRIVILEGES ON *.* TO 'cloud43'@'localhost';
 
+mysql-connector-python
+
+in settings.py
+
+DATABASES = {
+    "default": {
+        "ENGINE": "mysql.connector.django",
+        "NAME": "cloud43",
+        "USER": "cloud43",
+        "PASSWORD": "Iti123456789_",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
+}
+
+
+##################################
+#### ask django to create students table ---->
+
+
+--> models --> python module ---> class
+
+
+
+
+
+
+
+
+
+
+

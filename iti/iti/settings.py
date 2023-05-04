@@ -1,6 +1,4 @@
-# import pymysql
-#
-# pymysql.install_as_MySQLdb()
+
 """
 Django settings for iti project.
 
@@ -87,7 +85,7 @@ WSGI_APPLICATION = 'iti.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
+        "ENGINE": "mysql.connector.django",
         "NAME": "cloud43",
         "USER": "cloud43",
         "PASSWORD": "Iti123456789_",
